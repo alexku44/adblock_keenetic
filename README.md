@@ -1,13 +1,10 @@
-Автоматическая установка для выборочного обхода блокировок на маршрутизаторах с прошивкой Keenetic OS.
+Автоматическая установка для выборочного обхода блокировок на маршрутизаторах с прошивкой Keenetic OS.(entware)
 
-Подробности читайте в статье "Выборочный обход блокировок на маршрутизаторах с прошивкой Padavan и Keenetic OS" — https://habr.com/ru/post/428992/. Обязательно прочитайте (хотя бы один раз) статью перед тем, как использовать метод автоматической установки, и сделайте необходимые настройки на маршрутизаторе.
-
-ВНИМАНИЯ! Скрипт не проверялся на реальном устройстве (пока не было времени). Только для экспериментаторов. Все остальные должны использовать ручной метод установки, описанный в статье.
 
 Загрузите скрипт установки:
 ```bash
 opkg install wget ca-certificates
-wget --no-check-certificate -O /opt/bin/unblock_keenetic.sh https://raw.githubusercontent.com/Kyrie1965/unblock_keenetic/master/unblock_keenetic.sh
+wget --no-check-certificate -O /opt/bin/unblock_keenetic.sh https://raw.githubusercontent.com/alexku44/adblock_keenetic/blob/main/unblock_keenetic.sh
 chmod +x /opt/bin/unblock_keenetic.sh
 ```
 
@@ -25,13 +22,3 @@ unblock_keenetic.sh dnscrypt
 ```bash
 unblock_keenetic.sh remove
 ```
-
-Аналогичный скрипт для Padavan. ВНИМАНИЕ! Скрипт пока тоже не проверялся на реальном устройстве. Только для экспериментаторов. Все остальные должны использовать ручной метод установки, описанный в статье.
-
-Загрузка скрипта:
-```bash
-opkg install wget ca-certificates
-wget --no-check-certificate -O /opt/bin/unblock_padavan.sh https://raw.githubusercontent.com/Kyrie1965/unblock_keenetic/master/padavan/unblock_padavan.sh
-chmod +x /opt/bin/unblock_padavan.sh
-```
-
