@@ -36,16 +36,16 @@ then
   opkg install dnscrypt-proxy2
   
   rm -rf /opt/etc/dnscrypt-proxy.toml
-  wget --no-check-certificate -O /opt/etc/dnscrypt-proxy.toml https://raw.githubusercontent.com/Kyrie1965/unblock_keenetic/master/dnscrypt-proxy.toml
+  wget --no-check-certificate -O /opt/etc/dnscrypt-proxy.toml https://raw.githubusercontent.com/alexku44/adblock_keenetic/main/dnscrypt-proxy.toml
   
   /opt/etc/init.d/S09dnscrypt-proxy2 start
   
   rm -rf /opt/bin/unblock_ipset.sh
-  wget --no-check-certificate -O /opt/bin/unblock_ipset.sh https://raw.githubusercontent.com/Kyrie1965/unblock_keenetic/master/unblock_ipset_dnscrypt.sh
+  wget --no-check-certificate -O /opt/bin/unblock_ipset.sh https://raw.githubusercontent.com/alexku44/adblock_keenetic/main/unblock_ipset_dnscrypt.sh
   chmod +x /opt/bin/unblock_ipset.sh
   
   rm -rf /opt/bin/unblock_dnsmasq.sh
-  wget --no-check-certificate -O /opt/bin/unblock_dnsmasq.sh https://raw.githubusercontent.com/Kyrie1965/unblock_keenetic/master/unblock_dnsmasq_dnscrypt.sh
+  wget --no-check-certificate -O /opt/bin/unblock_dnsmasq.sh https://raw.githubusercontent.com/alexku44/adblock_keenetic/main/unblock_dnsmasq_dnscrypt.sh
   chmod +x /opt/bin/unblock_dnsmasq.sh
   
   unblock_update.sh
@@ -79,42 +79,42 @@ fi
 
 lanip=$(ndmq -p 'show interface Bridge0' -P address)
 
-wget --no-check-certificate -O /opt/etc/ndm/fs.d/100-ipset.sh https://raw.githubusercontent.com/Kyrie1965/unblock_keenetic/master/100-ipset.sh
+wget --no-check-certificate -O /opt/etc/ndm/fs.d/100-ipset.sh https://raw.githubusercontent.com/alexku44/adblock_keenetic/main/100-ipset.sh
 chmod +x /opt/etc/ndm/fs.d/100-ipset.sh
 sed -i "s/hash:net/${set_type}/g" /opt/etc/ndm/fs.d/100-ipset.sh
 
 rm -rf /opt/etc/tor/torrc
-wget --no-check-certificate -O /opt/etc/tor/torrc https://raw.githubusercontent.com/Kyrie1965/unblock_keenetic/master/torrc
+wget --no-check-certificate -O /opt/etc/tor/torrc https://raw.githubusercontent.com/alexku44/adblock_keenetic/main/torrc
 sed -i "s/192.168.1.1/${lanip}/g" /opt/etc/tor/torrc
 
-wget --no-check-certificate -O /opt/etc/unblock.txt https://raw.githubusercontent.com/Kyrie1965/unblock_keenetic/master/unblock.txt
+wget --no-check-certificate -O /opt/etc/unblock.txt https://raw.githubusercontent.com/alexku44/adblock_keenetic/main/unblock.txt
 
-wget --no-check-certificate -O /opt/bin/unblock_ipset.sh https://raw.githubusercontent.com/Kyrie1965/unblock_keenetic/master/unblock_ipset.sh
+wget --no-check-certificate -O /opt/bin/unblock_ipset.sh https://raw.githubusercontent.com/alexku44/adblock_keenetic/main/unblock_ipset.sh
 chmod +x /opt/bin/unblock_ipset.sh
 
-wget --no-check-certificate -O /opt/bin/unblock_dnsmasq.sh https://raw.githubusercontent.com/Kyrie1965/unblock_keenetic/master/unblock_dnsmasq.sh
+wget --no-check-certificate -O /opt/bin/unblock_dnsmasq.sh https://raw.githubusercontent.com/alexku44/adblock_keenetic/main/unblock_dnsmasq.sh
 chmod +x /opt/bin/unblock_dnsmasq.sh
 unblock_dnsmasq.sh
 
-wget --no-check-certificate -O /opt/bin/unblock_update.sh https://raw.githubusercontent.com/Kyrie1965/unblock_keenetic/master/unblock_update.sh
+wget --no-check-certificate -O /opt/bin/unblock_update.sh https://raw.githubusercontent.com/alexku44/adblock_keenetic/main/unblock_update.sh
 chmod +x /opt/bin/unblock_update.sh
 
-wget --no-check-certificate -O /opt/etc/init.d/S99unblock https://raw.githubusercontent.com/Kyrie1965/unblock_keenetic/master/S99unblock
+wget --no-check-certificate -O /opt/etc/init.d/S99unblock https://raw.githubusercontent.com/alexku44/adblock_keenetic/main/S99unblock
 chmod +x /opt/etc/init.d/S99unblock
 sed -i "s/hash:net/${set_type}/g" /opt/etc/init.d/S99unblock
 sed -i "s/192.168.1.1/${lanip}/g" /opt/etc/init.d/S99unblock
 
-wget --no-check-certificate -O /opt/etc/ndm/netfilter.d/100-redirect.sh https://raw.githubusercontent.com/Kyrie1965/unblock_keenetic/master/100-redirect.sh
+wget --no-check-certificate -O /opt/etc/ndm/netfilter.d/100-redirect.sh https://raw.githubusercontent.com/alexku44/adblock_keenetic/main/100-redirect.sh
 chmod +x /opt/etc/ndm/netfilter.d/100-redirect.sh
 sed -i "s/hash:net/${set_type}/g" /opt/etc/ndm/netfilter.d/100-redirect.sh
 sed -i "s/192.168.1.1/${lanip}/g" /opt/etc/ndm/netfilter.d/100-redirect.sh
 
 rm -rf /opt/etc/dnsmasq.conf
-wget --no-check-certificate -O /opt/etc/dnsmasq.conf https://raw.githubusercontent.com/Kyrie1965/unblock_keenetic/master/dnsmasq.conf
+wget --no-check-certificate -O /opt/etc/dnsmasq.conf https://raw.githubusercontent.com/alexku44/adblock_keenetic/main/dnsmasq.conf
 sed -i "s/192.168.1.1/${lanip}/g" /opt/etc/dnsmasq.conf
 
 rm -rf /opt/etc/crontab
-wget --no-check-certificate -O /opt/etc/crontab https://raw.githubusercontent.com/Kyrie1965/unblock_keenetic/master/crontab
+wget --no-check-certificate -O /opt/etc/crontab https://raw.githubusercontent.com/alexku44/adblock_keenetic/main/crontab
 
 ndmq -p 'opkg dns-override'
 ndmq -p 'system configuration save'
