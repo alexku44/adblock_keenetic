@@ -4,7 +4,7 @@
 Загрузите скрипт установки:
 ```bash
 opkg install wget ca-certificates
-wget --no-check-certificate -O /opt/bin/unblock_keenetic.sh https://raw.githubusercontent.com/alexku44/adblock_keenetic/blob/main/unblock_keenetic.sh
+wget --no-check-certificate -O /opt/bin/unblock_keenetic.sh https://raw.githubusercontent.com/alexku44/adblock_keenetic/main/unblock_keenetic.sh
 chmod +x /opt/bin/unblock_keenetic.sh
 ```
 
